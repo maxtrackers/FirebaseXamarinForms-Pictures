@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:telerikPrimitives="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
+             Title="FB Xamarin"
+             Icon="truck.png"
+             x:Class="FirebaseXamarinForms.Principal">
+    <ContentPage.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+                                iOS="truck.png"
+                                Android="truck.png"
+                                WinPhone="Images/edit.png" />
+    </ContentPage.Icon>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="truck.png" Text="Item 1" Priority="0" />
+        <ToolbarItem Name="MenuItem2" Order="Primary" Icon="icon.png" Text="Item 2" Priority="1" />
+    </ContentPage.ToolbarItems>
+    <NavigationPage.TitleIcon>
+        <FileImageSource>
+            <OnPlatform x:TypeArguments="FileImageSource"
+                                iOS="truck.png"
+                                Android="truck.png"
+                                WinPhone="Images/edit.png" />
+        </FileImageSource>
+    </NavigationPage.TitleIcon>
+    <telerikPrimitives:RadSideDrawer x:Name="drawer" DrawerLength="200">
+        <telerikPrimitives:RadSideDrawer.MainContent>
+            <Label Text="Main content" />
+        </telerikPrimitives:RadSideDrawer.MainContent>
+        <telerikPrimitives:RadSideDrawer.DrawerContent>
+            <StackLayout>
+                <Button Text="Mail"  Clicked="Button_Clicked" Image="truck.png"/>
+                <Button Text="Calendar" Clicked="Button_Clicked_1" Image="icon.png" />
+                <Button Text="People" Clicked="Button_Clicked_2" />
+                <Button Text="Tasks" />
+            </StackLayout>
+        </telerikPrimitives:RadSideDrawer.DrawerContent>
+    </telerikPrimitives:RadSideDrawer>
+</ContentPage>

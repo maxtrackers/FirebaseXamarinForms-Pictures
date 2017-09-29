@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+               xmlns:local="clr-namespace:FirebaseXamarinForms"
+             xmlns:telerikBusyIndicator="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             
+            xmlns:telerikListView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FirebaseXamarinForms.ListaEmpleados">
+    <ContentView.Content VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <telerikBusyIndicator:RadBusyIndicator x:Name="BusyIndicator" 
+                                                AnimationContentColor="#0066FF"
+                                       AnimationContentHeightRequest="100"
+                                       AnimationContentWidthRequest="100"
+                                       IsBusy="False">
+            <telerikBusyIndicator:RadBusyIndicator.Content>
+                <RelativeLayout>
+                   <!-- <telerikDataControls:RadListView x:Name="listViewChat"  
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=.85,Constant=0}">
+                        <telerikDataControls:RadListView.ItemTemplate>
+                            <DataTemplate>
+                                <telerikListView:ListViewTemplateCell>
+                                    <telerikListView:ListViewTemplateCell.View>
+                                        <Label Text="{Binding MensajeChat}" />
+
+                                    </telerikListView:ListViewTemplateCell.View>
+                                </telerikListView:ListViewTemplateCell>
+                            </DataTemplate>
+                        </telerikDataControls:RadListView.ItemTemplate>
+                    </telerikDataControls:RadListView>-->
+                    
+                    <ListView x:Name="listViewChat" 
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=.85,Constant=0}">
+                        <ListView.ItemTemplate>
+                            <!--<DataTemplate>
+                                <TextCell Text="{Binding MensajeChat}" />
+                            </DataTemplate>-->
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                      
+                                        <Label Text="{Binding MensajeChat}" FontAttributes="Bold" />
+                                        <Label Grid.Column="1" Text="{Binding NombreChat}" />
+                                        
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Grid x:Name="MessageControls" RowSpacing="1" ColumnSpacing="2" Padding="0"
+          BackgroundColor="#EFEFF4"
+          VerticalOptions="FillAndExpand"
+          HorizontalOptions="FillAndExpand"
+          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=listViewChat, Property=Height,Factor=.85,Constant=0}"
+          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=listViewChat, Property=Height,Factor=.15,Constant=0}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                <Entry Grid.Column="0" HeightRequest="25" Placeholder="Message" x:Name="txtMensaje"></Entry>
+                <Button Grid.Column="1" Text="Send" Clicked="btnSend_Clicked" x:Name="btnSend"></Button>
+                        
+                    </Grid>
+             
+                </RelativeLayout>
+            </telerikBusyIndicator:RadBusyIndicator.Content>
+        </telerikBusyIndicator:RadBusyIndicator>
+        <!--<ListView x:Name="listViewChat"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding MensajeChat}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <telerikDataControls:RadListView x:Name="listViewChat"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <telerikDataControls:RadListView.ItemTemplate>
+                <DataTemplate>
+                    <telerikListView:ListViewTemplateCell>
+                        <telerikListView:ListViewTemplateCell.View>
+                                <Label Text="{Binding MensajeChat}" />
+
+                        </telerikListView:ListViewTemplateCell.View>
+                    </telerikListView:ListViewTemplateCell>
+                </DataTemplate>
+            </telerikDataControls:RadListView.ItemTemplate>
+        </telerikDataControls:RadListView>-->
+    </ContentView.Content>
+</ContentView>

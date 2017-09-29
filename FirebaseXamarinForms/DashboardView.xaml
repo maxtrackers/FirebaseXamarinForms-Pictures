@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:local="clr-namespace:FirebaseXamarinForms"
+             xmlns:telerikChart="clr-namespace:Telerik.XamarinForms.Chart;assembly=Telerik.XamarinForms.Chart"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FirebaseXamarinForms.DashboardView">
+  <ContentView.Content>
+        <StackLayout>
+
+            <Label Text="Welcome to Xamarin Forms!" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" x:Name="lblContenido" />
+            <Entry Placeholder="Prueba Captura" x:Name="txtContenido"></Entry>
+            <Button x:Name="btnGrabar" Clicked="btnGrabar_Clicked" Text="Grabar Datos"/>
+            <telerikChart:RadPieChart x:Name="chart" MinimumHeightRequest="200" MinimumWidthRequest="200">
+                <telerikChart:RadPieChart.BindingContext>
+                    <local:ViewModel/>
+                </telerikChart:RadPieChart.BindingContext>
+                <telerikChart:RadPieChart.Series>   
+                    <telerikChart:PieSeries ItemsSource="{Binding Data}">
+                        <telerikChart:PieSeries.ValueBinding>
+                            <telerikChart:PropertyNameDataPointBinding PropertyName="Value"/>
+                        </telerikChart:PieSeries.ValueBinding>
+                    </telerikChart:PieSeries>
+                </telerikChart:RadPieChart.Series>
+            </telerikChart:RadPieChart>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+              xmlns:cts="clr-namespace:AsNum.XFControls;assembly=AsNum.XFControls"
+             x:Class="FirebaseXamarinForms.XFControlsCV">
+  <ContentView.Content>
+        <StackLayout Orientation="Vertical" x:Name="slChecks">
+            <cts:CheckBox ClassId="chk1" Text="Opcion Uno" CheckChanged="CheckBox_CheckChanged" ShowLabel="True"/>
+            <cts:CheckBox ClassId="chk2" Text="Opcion Dos" CheckChanged="CheckBox_CheckChanged" ShowLabel="True"/>
+            <cts:CheckBox ClassId="chk3" Text="Opcion Tres" CheckChanged="CheckBox_CheckChanged" ShowLabel="True"/>
+            <cts:CheckBox ClassId="chk4" Text="Opcion Cuatro" CheckChanged="CheckBox_CheckChanged" ShowLabel="True"/>
+            <cts:CheckBox ClassId="chk5" Text="Opcion Cinco" CheckChanged="CheckBox_CheckChanged" ShowLabel="True"/>
+            
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>
